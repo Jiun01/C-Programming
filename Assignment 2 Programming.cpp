@@ -2,29 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//int membercheck(char memberconfirmation)
-//{
-//	if(memberconfirmation == 'Y')
-//	{
-//		printf("OK");
-//	}
-//	else
-//	{
-//		printf("notok");
-//	}
-//	return 0;
-//}
-struct user
-{
+
+struct user{
 	int productcode;
 	int quantity;
 	float discount;
-	char memberconfirmation;
+	//int membershipstatus;
 };
 
-int main()
-{
-	//char memberconfirmation;
+int main(){
+	//char y = 1;
+	//char n = 0;
+	//int memberconfirmation=0;
 	
 	printf("                                                                ..              \n");
 	printf("                                                      ..,+I$$$$$$I.             \n");
@@ -67,11 +56,16 @@ int main()
 	printf("Press any key to proceed \n");
 	_getch();
 	system("cls");
-	//printf("Are you a member of BestPrice currently? Y/N\n");
-	//scanf_s("%c", memberconfirmation);
-	//("You are ");
+	//printf("Are you a member of BestPrice currently? Y or N\n");
+	//scanf_s("%d", memberconfirmation);
+
+	//while(memberconfirmation == 1) {
+	//	printf("You are a member ");
+	//	}
+		
+	
 	//_getch();
-	//		system("cls");
+	//system("cls");
 	{
 		int selection;
 		do {
@@ -90,7 +84,7 @@ int main()
 			switch (selection)
 			{
 			case 1:
-				printf("You have selected Option 1");
+				printf("You have selected Option 1\n");
 				printf(" \n");
 				printf(" ============== ===================== =================== ================== \n");
 				printf("  Product Code   Product Description   Retail Price (RM)   Special Discount  \n");
@@ -111,14 +105,17 @@ int main()
 
 			case 2:
 				printf("You have selected Option 2");
+				system("cls");
 				break;
 
 			case 3:
 				printf("You have selected Option 3");
+				system("cls");
 				break;
 
 			case 4:
 				printf("You have selected Option 4");
+				system("cls");
 				break;
 
 			case 5:
@@ -131,6 +128,8 @@ int main()
 				printf("You will now return the the selection screen");
 					printf(" \n");
 					printf("Press on any key to return to home screen");
+					_getch();
+					system("cls");
 					break;
 
 			}
@@ -141,7 +140,9 @@ int main()
 	}
 }
                                                                      
-
+//void membershipconfirmation(int membership) {
+//	membership = 0;
+//}
 
 
 
