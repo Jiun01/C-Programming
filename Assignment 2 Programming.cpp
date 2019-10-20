@@ -3,17 +3,13 @@
 #include <stdlib.h>
 
 
-struct user{
+struct Products{
 	int productcode;
-	int quantity;
-	float discount;
-	//int membershipstatus;
+	float discount,retailprice;
 };
 
 int main(){
-	//char y = 1;
-	//char n = 0;
-	//int memberconfirmation=0;
+	//membership not done
 	
 	printf("                                                                ..              \n");
 	printf("                                                      ..,+I$$$$$$I.             \n");
@@ -56,18 +52,10 @@ int main(){
 	printf("Press any key to proceed \n");
 	_getch();
 	system("cls");
-	//printf("Are you a member of BestPrice currently? Y or N\n");
-	//scanf_s("%d", memberconfirmation);
 
-	//while(memberconfirmation == 1) {
-	//	printf("You are a member ");
-	//	}
-		
-	
-	//_getch();
-	//system("cls");
 	{
-		int selection;
+		int selection,productcode,quantity;
+		
 		do {
 			printf("Please key in the number of your selection\n");
 			printf("Option 1 : Product and Price details\n");
@@ -95,12 +83,16 @@ int main(){
 				printf("           404   Dry Blower                       850.00   25% Discount      \n");
 				printf(" ============== ===================== =================== ================== \n");
 				printf(" \n");
-					//(" \n");
-					//("Enter the product code:");
-					//("%d",productcode);
-					//("Please enter preffered quantity");
-					//("%d", quantity);
-					
+
+				printf("Enter the product code:");
+				scanf_s("%d", &productcode);
+				printf("Please enter preffered quantity:");
+				scanf_s("%d", &quantity);
+
+				printf("Enter any key to return to main menu:");
+				
+				_getch();
+				system("cls");
 					break;
 
 			case 2:
@@ -139,12 +131,39 @@ int main(){
 		return 0;
 	}
 }
-                                                                     
+ 
+
+
+printf(" ============== ===================== =================== ================== \n");
+printf("  Product Code   Product Description   Retail Price (RM)   Special Discount  \n");
+printf(" ============== ===================== =================== ================== \n");
+printf("           101   Wall Scrapper                    100.00   -                 \n");
+printf("           202   Tiles Waxes                      350.00   -                 \n");
+printf("           303   Mud/Tar Remover                  500.00   20% Discount      \n");
+printf("           404   Dry Blower                       850.00   25% Discount      \n");
+printf(" ============== ===================== =================== ================== \n");
+printf(" \n");
+
+struct Products WallScrapper;
+WallScrapper.productcode = 101;
+WallScrapper.discount = 1;
+WallScrapper.retailprice = 100;
+
+
 //void membershipconfirmation(int membership) {
 //	membership = 0;
 //}
 
+//printf("Are you a member of BestPrice currently? Y or N\n");
+//scanf_s("%d", memberconfirmation);
 
+//while(memberconfirmation == 1) {
+//	printf("You are a member ");
+//	}
+
+
+//_getch();
+//system("cls");
 
 
                                                                                                                                                                             
