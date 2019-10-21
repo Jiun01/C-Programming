@@ -9,12 +9,12 @@ struct Products{
 };
 
 int main(){
-	
+	char membershipconfirmation;
 	
 	printf("                                                                ..              \n");
 	printf("                                                      ..,+I$$$$$$I.             \n");
 	printf("                                            ..,:.. :$$$$$$$$$$$$$$$.            \n");
-	printf("                                         :$$$$$$$$$7$$$$$$$$$$$$$$$:            \n");
+	printf("                                         :$$$$$$$$$7$$$$$$$$$$$$$$1$:            \n");
 	printf("                            .:+I$$$I  .,$$$$$$$$$$$:$$$$$$$$$$$$$$$I            \n");
 	printf("                      $Z$$$$$$$$$$$$  ?$$$$$$$$$$$$.7$$$$$$$$$$$..              \n");
 	printf("          ..,:+++~..  7$$$$$$$$$$$$$..$$$$$$$:...:I.:...=$$$$$$$.               \n");
@@ -107,6 +107,8 @@ int main(){
 
 			case 4:
 				printf("You have selected Option 4");
+					printf("Are you currently a member:Y/N\n");
+				scanf_s("%c",&membershipconfirmation);
 				system("cls");
 				break;
 
@@ -132,8 +134,3 @@ int main(){
 	}
 }
  
-
-                                                                                                                                                                            
-                                                                                                                                                                            
-                                                                                                                                                                            
-                                                                                                                                                                            
