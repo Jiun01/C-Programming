@@ -9,7 +9,7 @@ struct Products{
 };
 
 int main(){
-	//membership not done
+	
 	
 	printf("                                                                ..              \n");
 	printf("                                                      ..,+I$$$$$$I.             \n");
@@ -132,39 +132,6 @@ int main(){
 	}
 }
  
-
-
-printf(" ============== ===================== =================== ================== \n");
-printf("  Product Code   Product Description   Retail Price (RM)   Special Discount  \n");
-printf(" ============== ===================== =================== ================== \n");
-printf("           101   Wall Scrapper                    100.00   -                 \n");
-printf("           202   Tiles Waxes                      350.00   -                 \n");
-printf("           303   Mud/Tar Remover                  500.00   20% Discount      \n");
-printf("           404   Dry Blower                       850.00   25% Discount      \n");
-printf(" ============== ===================== =================== ================== \n");
-printf(" \n");
-
-struct Products WallScrapper;
-WallScrapper.productcode = 101;
-WallScrapper.discount = 1;
-WallScrapper.retailprice = 100;
-
-
-//void membershipconfirmation(int membership) {
-//	membership = 0;
-//}
-
-//printf("Are you a member of BestPrice currently? Y or N\n");
-//scanf_s("%d", memberconfirmation);
-
-//while(memberconfirmation == 1) {
-//	printf("You are a member ");
-//	}
-
-
-//_getch();
-//system("cls");
-
 
                                                                                                                                                                             
                                                                                                                                                                             
