@@ -2,19 +2,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void pricelist() {
+	printf(" ============== ===================== =================== ================== \n");
+	printf("  Product Code   Product Description   Retail Price (RM)   Special Discount  \n");
+	printf(" ============== ===================== =================== ================== \n");
+	puts("           101   Wall Scrapper                    100.00   -                 \n");
+	puts("           202   Tiles Waxes                      350.00   -                 \n");
+	puts("           303   Mud/Tar Remover                  500.00   20% Discount      \n");
+	puts("           404   Dry Blower                       850.00   25% Discount      \n");
+	printf(" ============== ===================== =================== ================== \n");
+}
 
-struct Products{
-	int productcode;
-	float discount,retailprice;
-};
+float ws,tw,mtr,db,total;
+int selection, productcode, quantity;
+char membershipconfirmation;
 
-int main(){
-	//membership not done
-	
+int main() {
 	printf("                                                                ..              \n");
 	printf("                                                      ..,+I$$$$$$I.             \n");
 	printf("                                            ..,:.. :$$$$$$$$$$$$$$$.            \n");
-	printf("                                         :$$$$$$$$$7$$$$$$$$$$$$$$$:            \n");
+	printf("                                         :$$$$$$$$$7$$$$$$$$$$$$$$1$:            \n");
 	printf("                            .:+I$$$I  .,$$$$$$$$$$$:$$$$$$$$$$$$$$$I            \n");
 	printf("                      $Z$$$$$$$$$$$$  ?$$$$$$$$$$$$.7$$$$$$$$$$$..              \n");
 	printf("          ..,:+++~..  7$$$$$$$$$$$$$..$$$$$$$:...:I.:...=$$$$$$$.               \n");
@@ -54,8 +61,8 @@ int main(){
 	system("cls");
 
 	{
-		int selection,productcode,quantity;
 		
+
 		do {
 			printf("Please key in the number of your selection\n");
 			printf("Option 1 : Product and Price details\n");
@@ -74,39 +81,83 @@ int main(){
 			case 1:
 				printf("You have selected Option 1\n");
 				printf(" \n");
-				printf(" ============== ===================== =================== ================== \n");
-				printf("  Product Code   Product Description   Retail Price (RM)   Special Discount  \n");
-				printf(" ============== ===================== =================== ================== \n");
-				printf("           101   Wall Scrapper                    100.00   -                 \n");
-				printf("           202   Tiles Waxes                      350.00   -                 \n");
-				printf("           303   Mud/Tar Remover                  500.00   20% Discount      \n");
-				printf("           404   Dry Blower                       850.00   25% Discount      \n");
-				printf(" ============== ===================== =================== ================== \n");
-				printf(" \n");
-
-				printf("Enter the product code:");
-				scanf_s("%d", &productcode);
-				printf("Please enter preffered quantity:");
-				scanf_s("%d", &quantity);
-
-				printf("Enter any key to return to main menu:");
-				
+				pricelist();
+				printf("Proceed to Option 2 to purchase items \n");
+				printf("Enter any key to return to main menu");
 				_getch();
-				system("cls");
-					break;
-
-			case 2:
-				printf("You have selected Option 2");
 				system("cls");
 				break;
 
+			case 2:
+				char quitkey;
+				printf("You have selected Option 2");
+				printf(" \n");
+				do {
+					pricelist();
+					printf(" \n");
+					printf("Enter the product code:");
+					scanf_s("%d", &productcode);
+					switch (productcode)
+					{
+					case 101:
+						printf("You have selected Wall Scrapper.\n");
+						printf("Please Enter your Quantity:");
+						scanf_s("%d", &quantity);
+
+						ws += quantity * 100;
+						break;
+
+					case 202:
+						printf("You have selected Tiles Waxes.\n");
+						printf("Please Enter your Quantity:");
+						scanf_s("%d", &quantity);
+
+						tw += quantity * 350;
+						break;
+
+					case 303:
+						printf("You have selected Mud/Tar Remover.\n");
+						printf("Please Enter your Quantity:");
+						scanf_s("%d", &quantity);
+
+						mtr += quantity * 500;
+						break;
+
+					case 404:
+						printf("You have selected Dry Blower.\n");
+						printf("Please Enter your Quantity:");
+						scanf_s("%d", &quantity);
+
+						db += quantity * 850;
+						break;
+					default:
+						printf("Please enter the product key according to the table\n");
+						printf("Enter Y to continue buying\n");
+							break;
+					}
+					printf("Do you want to buy more:Y/N \n");
+					scanf_s(" %c", &quitkey);
+					system("cls");
+				} while (quitkey == 'y');
+				printf("Press any key to return to main menu");
+				_getch();
+				system("cls");
+				break;
+			
 			case 3:
-				printf("You have selected Option 3");
+				printf("You have selected Option 3\n");
 				system("cls");
 				break;
 
 			case 4:
-				printf("You have selected Option 4");
+				printf("You have selected Option 4\n");
+				printf("Are you currently a member:Y/N\n");
+				scanf_s(" %c", &membershipconfirmation);
+				system("cls");
+				total = (ws + tw + mtr + db);
+				printf(Total without Tax and Delivery fees="%.2f", total);
+
+				_getch();
 				system("cls");
 				break;
 
@@ -116,13 +167,13 @@ int main(){
 				break;
 
 			default:
-				printf("Please enter numbers which are displayed on the screen");
-				printf("You will now return the the selection screen");
-					printf(" \n");
-					printf("Press on any key to return to home screen");
-					_getch();
-					system("cls");
-					break;
+				printf("Please enter numbers which are displayed on the screen\n");
+				printf("You will now return the the selection screen\n");
+				printf(" \n");
+				printf("Press on any key to return to home screen\n");
+				_getch();
+				system("cls");
+				break;
 
 			}
 		} while (selection = 5);
@@ -131,42 +182,3 @@ int main(){
 		return 0;
 	}
 }
- 
-
-
-printf(" ============== ===================== =================== ================== \n");
-printf("  Product Code   Product Description   Retail Price (RM)   Special Discount  \n");
-printf(" ============== ===================== =================== ================== \n");
-printf("           101   Wall Scrapper                    100.00   -                 \n");
-printf("           202   Tiles Waxes                      350.00   -                 \n");
-printf("           303   Mud/Tar Remover                  500.00   20% Discount      \n");
-printf("           404   Dry Blower                       850.00   25% Discount      \n");
-printf(" ============== ===================== =================== ================== \n");
-printf(" \n");
-
-struct Products WallScrapper;
-WallScrapper.productcode = 101;
-WallScrapper.discount = 1;
-WallScrapper.retailprice = 100;
-
-
-//void membershipconfirmation(int membership) {
-//	membership = 0;
-//}
-
-//printf("Are you a member of BestPrice currently? Y or N\n");
-//scanf_s("%d", memberconfirmation);
-
-//while(memberconfirmation == 1) {
-//	printf("You are a member ");
-//	}
-
-
-//_getch();
-//system("cls");
-
-
-                                                                                                                                                                            
-                                                                                                                                                                            
-                                                                                                                                                                            
-                                                                                                                                                                            
