@@ -13,7 +13,7 @@ void pricelist() {
 	printf(" ============== ===================== =================== ================== \n");
 }
 
-float ws,tw,mtr,db,total;
+float ws,tw,mtr,db,gtotal;
 int selection, productcode, quantity;
 char membershipconfirmation;
 
@@ -154,8 +154,8 @@ int main() {
 				printf("Are you currently a member:Y/N\n");
 				scanf_s(" %c", &membershipconfirmation);
 				system("cls");
-				total = (ws + tw + mtr + db);
-				printf(Total without Tax and Delivery fees="%.2f", total);
+				gtotal = (ws + tw + mtr + db); //delivery not added
+				printf("Gross Total=" "%.2f", gtotal);
 
 				_getch();
 				system("cls");
